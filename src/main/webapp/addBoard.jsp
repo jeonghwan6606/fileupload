@@ -1,9 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<%
+<%     
+	if(session.getAttribute("loginMemberId")== null){
+		response.sendRedirect(request.getContextPath() + "/login.jsp");
+		return;
+	}
+
 	String memberId = (String)session.getAttribute("loginMemberId");
-%>    
+%>	
 <!DOCTYPE html>
 <html>
 <head>
